@@ -1,23 +1,17 @@
 let defaultErrorFn = function (error: any): void {
-  console.log(error);
+  console.log(error.message || error);
 };
 
 export function changeErrorFn(newErrorFn: (error?: any) => any): void {
   defaultErrorFn = newErrorFn;
 }
 
-export default function tryit<T>(
+export default async function tryit<T>(
   fn: () => T,
   errFn: (error?: any) => any = defaultErrorFn
-): T | void {
+): Promise<void | T> {
   try {
-    const result = fn();
-    // if (result instanceof Promise) {
-    //   result.then().catch((reason: any) => {
-    //     errFn(reason);
-    //   });
-    // }
-    return result;
+    return await fn();
   } catch (error) {
     errFn(error);
   }
