@@ -45,8 +45,8 @@ promise
 However, these default approaches have some issues:
 
 - verbosity
-- different ways to treat errors (sync x promise)
-- no default error treatment
+- different options to treat errors (sync x promise)
+- no default error handling
 
 <br>
 
@@ -75,6 +75,12 @@ tryit(() => {
   throwAnError();
   console.log("This code should never run");
 });
+```
+
+The above code will gracefully run with the error being printed to the console:
+
+```shell
+This error should be fired
 ```
 
 <p><br></p>
