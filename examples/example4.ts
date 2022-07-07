@@ -1,11 +1,11 @@
-import tryit, { changeErrorFn } from "../index.js";
+import tryon, { changeErrorFn } from "../index.js";
 
 const newErrorFn = (error: any) => {
   console.log("It works!!! The error is:", error);
 };
 changeErrorFn(newErrorFn);
 
-await tryit(async () => {
+await tryon(async () => {
   const p = new Promise((resolve, reject) => {
     reject(false);
   });

@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://pt-br.reactjs.org/">🌱 Tryit</a>
+    <a href="https://pt-br.reactjs.org/">🌱 Tryon</a>
 </h1>
 <p align="center">🚀 Simplifies error control in your JavaScript/TypeScript</p>
 
@@ -52,10 +52,10 @@ However, these default approaches have some issues:
 
 What if we could simplify the error control, with a cleaner usage, and also
 have a default error handling?
-This is the goal of the tryit package and here it is how you can use it:
+This is the goal of the tryon package and here it is how you can use it:
 
 ```javascript
-tryit(() => {
+tryon(() => {
   // code logic here
 });
 ```
@@ -67,7 +67,7 @@ additional examples.
 
 ```javascript
 // You just need to wrap your code within a function
-tryit(() => {
+tryon(() => {
   // Your code starts here
   function throwAnError() {
     throw new Error("This error should be fired");
@@ -88,7 +88,7 @@ This error should be fired
 ## How to install:
 
 ```
-npm install tryit
+npm install tryon
 ```
 
 <p><br></p>
@@ -101,14 +101,14 @@ npm install tryit
 <br>
 
 ```javascript
-import tryit, { changeErrorFn } from "tryit";
+import tryon, { changeErrorFn } from "tryon";
 
-const newErrorFn = (error: any) => {
+const newErrorFn = (error) => {
   console.log("It works!!! The error is:", error.message);
 };
 changeErrorFn(newErrorFn);
 
-tryit(() => {
+tryon(() => {
   function throwAnError() {
     throw new Error("This error should be fired");
   }
@@ -123,14 +123,14 @@ tryit(() => {
 <br>
 
 ```javascript
-import tryit, { changeErrorFn } from "tryit";
+import tryon, { changeErrorFn } from "tryon";
 
-const newErrorFn = (error: any) => {
+const newErrorFn = (error) => {
   console.log("It works!!! The error is:", error.message);
 };
 changeErrorFn(newErrorFn);
 
-await tryit(async () => {
+await tryon(async () => {
   function throwAnError() {
     throw new Error("This error should be fired");
   }
@@ -152,9 +152,9 @@ await tryit(async () => {
 <br>
 
 ```javascript
-import tryit from "tryit";
+import tryon from "tryon";
 
-await tryit(() => {
+await tryon(() => {
   function throwAnError() {
     throw new Error("This error should be fired");
   }
@@ -177,9 +177,9 @@ await tryit(() => {
 <br>
 
 ```javascript
-import tryit from "tryit";
+import tryon from "tryon";
 
-await tryit(async () => {
+await tryon(async () => {
   const p = new Promise((resolve, reject) => {
     reject(false);
   });
@@ -190,6 +190,28 @@ await tryit(async () => {
 ```
 
 <p><br></p>
+
+<br>
+5. Error handling as a second function:
+
+<br>
+
+```javascript
+import tryon from "tryon";
+
+tryon(
+  () => {
+    function throwAnError() {
+      throw new Error("This error should be fired");
+    }
+    throwAnError();
+    console.log("This code should never run");
+  },
+  (error) => {
+    console.log("It works!!! The error is:", error.message);
+  }
+);
+```
 
 ## 🛠 Technologies
 

@@ -6,7 +6,7 @@ export function changeErrorFn(newErrorFn: (error?: any) => any): void {
   defaultErrorFn = newErrorFn;
 }
 
-export default async function tryit<T>(
+export default async function tryon<T>(
   fn: () => T,
   errFn: (error?: any) => any = defaultErrorFn
 ): Promise<void | T> {

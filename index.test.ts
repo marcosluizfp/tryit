@@ -1,10 +1,10 @@
-import tryit, { changeErrorFn } from ".";
+import tryon, { changeErrorFn } from ".";
 
 describe("tryit", () => {
   it("should run sync code that doesn't throw an error", () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    tryit(
+    tryon(
       () => {
         fn();
       },
@@ -17,7 +17,7 @@ describe("tryit", () => {
   it("should run sync code that throws an error", () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    tryit(
+    tryon(
       () => {
         function throwAnError() {
           throw new Error("This error should be fired");
@@ -37,7 +37,7 @@ describe("tryit", () => {
   it("should run async code that doesn't throw an error - v1", async () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    await tryit(async () => {
+    await tryon(async () => {
       const p = new Promise((resolve, reject) => {
         resolve(true);
       });
@@ -54,7 +54,7 @@ describe("tryit", () => {
   it("should run async code that doesn't throw an error - v2", async () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    await tryit(async () => {
+    await tryon(async () => {
       const p = new Promise((resolve, reject) => {
         resolve(true);
       });
@@ -70,7 +70,7 @@ describe("tryit", () => {
   it("should run async code that throws an error - v1", async () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    await tryit(
+    await tryon(
       async () => {
         function throwAnError() {
           throw new Error("This error should be fired");
@@ -96,7 +96,7 @@ describe("tryit", () => {
   it("should run async code that throws an error - v2", async () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    await tryit(
+    await tryon(
       () => {
         function throwAnError() {
           throw new Error("This error should be fired");
@@ -123,7 +123,7 @@ describe("tryit", () => {
   it("should run async code that throws an error - v3", async () => {
     const fn = jest.fn();
     const errFn = jest.fn();
-    await tryit(
+    await tryon(
       () => {
         const p = new Promise((resolve, reject) => {
           reject(false);
@@ -143,7 +143,7 @@ describe("tryit", () => {
 
   it("should call default error function", () => {
     const errFn = jest.fn();
-    tryit(() => {
+    tryon(() => {
       function throwAnError() {
         throw new Error("This error should be fired");
       }
@@ -157,7 +157,7 @@ describe("tryit", () => {
     const errFn = jest.fn();
     const newErrorFn = () => errFn();
     changeErrorFn(newErrorFn);
-    tryit(() => {
+    tryon(() => {
       function throwAnError() {
         throw new Error("This error should be fired");
       }

@@ -1,11 +1,11 @@
-import tryit, { changeErrorFn } from "../index.js";
+import tryon, { changeErrorFn } from "../index.js";
 
 const newErrorFn = (error: any) => {
   console.log("It works!!! The error is:", error.message);
 };
 changeErrorFn(newErrorFn);
 
-await tryit(() => {
+await tryon(() => {
   function throwAnError() {
     throw new Error("This error should be fired");
   }
