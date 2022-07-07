@@ -4,14 +4,12 @@
 <p align="center">🚀 Simplifies error control in your JavaScript/TypeScript</p>
 
 <div align="center">
-<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=<COLOR>&style=for-the-badge&logo=<LOGO>" /><space><space>
+<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=green&style=for-the-badge" alt="MIT License Badge" /><space><space>
 </div>
 
 <p><br></p>
 
 ## Overview
-
----
 
 Currently, there are basically two options to catch errors in your
 JavaScript code:
