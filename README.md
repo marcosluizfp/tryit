@@ -16,19 +16,19 @@ JavaScript code:
 
 <br>
 
-1. try/catch for a) synchronous code or b) code using the async/await keywords:
+Option 1: try/catch for a) synchronous code or b) code using the async/await keywords:
 
 ```javascript
 try {
   // code logic here
 } catch (error) {
-  // error treatment here
+  // error handling here
 }
 ```
 
 <br>
 
-2. catch handler when using a Promise:
+Option 2: catch handler when using a Promise:
 
 ```javascript
 promise
@@ -36,7 +36,7 @@ promise
     // code logic here
   })
   .catch((error) => {
-    // error treatment here
+    // error handling here
   });
 ```
 
@@ -51,7 +51,7 @@ However, these default approaches have some issues:
 <br>
 
 What if we could simplify the error control, with a cleaner usage, and also
-have a default error treatment?
+have a default error handling?
 This is the goal of the tryit package and here it is how you can use it:
 
 ```javascript
@@ -81,8 +81,6 @@ tryit(() => {
 
 ## How to install:
 
----
-
 ```
 npm install tryit
 ```
@@ -90,8 +88,6 @@ npm install tryit
 <p><br></p>
 
 ## Examples
-
----
 
 <br>
 1. Normal code, plus error handling customization:
@@ -191,8 +187,6 @@ await tryit(async () => {
 
 ## 🛠 Technologies
 
----
-
 The following libraries/frameworks were used on the project:
 
 - [Node.js](https://nodejs.org/en/)
@@ -202,8 +196,6 @@ The following libraries/frameworks were used on the project:
 <p><br></p>
 
 ## Author
-
----
 
 <a href="https://blog.rocketseat.com.br/author/thiago/">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/15175383?s=120&v=4" width="100px;" alt=""/>
