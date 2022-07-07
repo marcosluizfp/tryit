@@ -1,7 +1,7 @@
 {
   "name": "tryit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simplifies error control in your JavaScript/TypeScript",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,8 +12,14 @@
     "type": "git",
     "url": "git+https://github.com/marcosluizfp/tryit.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "try",
+    "catch",
+    "error",
+    "bug",
+    "fix"
+  ],
+  "author": "Marcos Pereira",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/marcosluizfp/tryit/issues"
