@@ -1,5 +1,5 @@
 {
-  "name": "tryit",
+  "name": "tryon",
   "version": "1.0.0",
   "description": "Simplifies error control in your JavaScript/TypeScript",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcosluizfp/tryit.git"
+    "url": "git+https://github.com/marcosluizfp/tryon.git"
   },
   "keywords": [
     "try",
@@ -22,9 +22,9 @@
   "author": "Marcos Pereira",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marcosluizfp/tryit/issues"
+    "url": "https://github.com/marcosluizfp/tryon/issues"
   },
-  "homepage": "https://github.com/marcosluizfp/tryit#readme",
+  "homepage": "https://github.com/marcosluizfp/tryon#readme",
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",

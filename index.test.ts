@@ -1,6 +1,6 @@
 import tryon, { changeErrorFn } from ".";
 
-describe("tryit", () => {
+describe("tryon", () => {
   it("should run sync code that doesn't throw an error", () => {
     const fn = jest.fn();
     const errFn = jest.fn();
