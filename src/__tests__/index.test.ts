@@ -1,4 +1,4 @@
-import tryon, { changeErrorFn } from ".";
+import tryon, { changeErrorFn } from "../index";
 
 describe("tryon", () => {
   it("should run sync code that doesn't throw an error", () => {

@@ -1,11 +1,11 @@
-import tryon, { changeErrorFn } from "../index.js";
+import tryon, { changeErrorFn } from "../index";
 
 const newErrorFn = (error: any) => {
   console.log("It works!!! The error is:", error.message);
 };
 changeErrorFn(newErrorFn);
 
-await tryon(async () => {
+tryon(() => {
   function throwAnError() {
     throw new Error("This error should be fired");
   }
@@ -16,6 +16,5 @@ await tryon(async () => {
     resolve(true);
   });
 
-  const value = await p; // Promise throws an error
-  console.log("This code should never run");
+  return p;
 });

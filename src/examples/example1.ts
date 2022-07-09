@@ -1,4 +1,4 @@
-import tryon, { changeErrorFn } from "../index.js";
+import tryon, { changeErrorFn } from "../index";
 
 const newErrorFn = (error: any) => {
   console.log("It works!!! The error is:", error.message);

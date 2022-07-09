@@ -2,11 +2,11 @@ let defaultErrorFn = function (error: any): void {
   console.log(error.message || error);
 };
 
-export function changeErrorFn(newErrorFn: (error?: any) => any): void {
+export const changeErrorFn = function (newErrorFn: (error?: any) => any): void {
   defaultErrorFn = newErrorFn;
-}
+};
 
-export default async function tryon<T>(
+const tryon = async function <T>(
   fn: () => T,
   errFn: (error?: any) => any = defaultErrorFn
 ): Promise<void | T> {
@@ -15,4 +15,9 @@ export default async function tryon<T>(
   } catch (error) {
     errFn(error);
   }
-}
+};
+
+export default tryon;
+
+module.exports = tryon;
+module.exports.changeErrorFn = changeErrorFn;

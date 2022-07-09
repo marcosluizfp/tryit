@@ -2,10 +2,11 @@
   "name": "tryon",
   "version": "1.0.0",
   "description": "Simplifies error control in your JavaScript/TypeScript",
-  "main": "index.js",
-  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "ts": "ts-node --esm",
+    "ts": "ts-node",
+    "build": "tsc",
     "test": "jest --watch"
   },
   "repository": {
@@ -19,8 +20,11 @@
     "bug",
     "fix"
   ],
+  "files": [
+    "lib/**/*"
+  ],
   "author": "Marcos Pereira",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcosluizfp/tryon/issues"
   },
